@@ -1,13 +1,24 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+public class Main {
+    public static void main(String[] args) {
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
+        Paciente p = new Paciente(
+                "Carlos Pérez",
+                "0102030405",
+                45,
+                25.50,
+                3,
+                4,
+                "Premium"
+        );
+
+        System.out.println("===== REPORTE DEL PACIENTE =====");
+        System.out.println("Nombre: " + p.nombreCompleto);
+        System.out.println("ID: " + p.identificacion);
+
+        System.out.println("\n===== RESULTADOS =====");
+        System.out.println("Costo total sin descuento: " + p.calcularCostoTotal());
+        System.out.println("Costo final con descuento: " + p.aplicarDescuento());
+        System.out.println("Clasificación: " + p.clasificarPrioridad());
+        System.out.println("Mensaje: " + p.generarMensajeMedico());
     }
 }
